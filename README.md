@@ -120,6 +120,10 @@ If you receive an HTTP response, the connection is successful.
 ## 8. Next Steps
 - Keep LangFlow running in the background while developing.
 - Once set up, continue with backend and frontend integration.
+- **Integrate the following repository into our project:** [Galago Repo](https://github.com/SalimAlkharsa/galago.git).
+  - Replace **LanceDB implementation** with **MongoDB**.
+  - Integrate **OneDrive as the CRM** for document ingestion.
+  - Incorporate the **document processing functions as API endpoints** into the backend.
 
 ---
 
