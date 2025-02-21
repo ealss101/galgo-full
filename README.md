@@ -7,6 +7,7 @@ This guide provides step-by-step instructions to:
 - Set up the `.env` file for database and LangFlow configuration.
 - Run LangFlow using Docker and Docker Compose following the official setup.
 - Verify LangFlow is running and connected to the backend.
+- Create a blank flow in LangFlow and import predefined flows from the repository.
 
 ---
 
@@ -79,7 +80,24 @@ For more information on deploying LangFlow with Docker, refer to the official La
 
 ---
 
-### 5. Stop LangFlow (If Needed)
+### 5. Creating a Blank Flow and Importing Predefined Flows
+
+Once LangFlow is running, follow these steps to create a new blank flow and import existing flows from the repository:
+
+1. **Open LangFlow**: Navigate to `http://localhost:7860` in your browser.
+2. **Create a Blank Flow**:
+   - Click on the **New Flow** button.
+   - Name the flow appropriately.
+   - Click **Create** to start a new flow.
+3. **Import Predefined Flows**:
+   - In the LangFlow UI, locate the **Import Flow** option.
+   - Navigate to the `flows/` folder in the repository.
+   - Select the desired `.json` file and upload it to LangFlow.
+   - The flow will be loaded and ready for use.
+
+---
+
+### 6. Stop LangFlow (If Needed)
 To stop LangFlow, run:
 ```sh
 docker compose down
@@ -88,7 +106,7 @@ This will gracefully shut down the container.
 
 ---
 
-### 6. Verify LangFlow is Running
+### 7. Verify LangFlow is Running
 Once LangFlow is running, confirm that the backend can communicate with it.
 
 Run the following command inside your backend directory:
@@ -99,7 +117,7 @@ If you receive an HTTP response, the connection is successful.
 
 ---
 
-## 7. Next Steps
+## 8. Next Steps
 - Keep LangFlow running in the background while developing.
 - Once set up, continue with backend and frontend integration.
 
@@ -109,3 +127,4 @@ If you receive an HTTP response, the connection is successful.
 - [LangFlow GitHub Repository](https://github.com/logspace-ai/langflow)
 - [LangFlow Docker Deployment Guide](https://docs.langflow.org/Deployment/deployment-docker)
 - [Docker Compose Guide](https://docs.docker.com/compose/)
+
