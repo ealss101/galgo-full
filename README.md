@@ -1,0 +1,2 @@
+# galgo-full
+backend + frontend
