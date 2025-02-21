@@ -16,9 +16,9 @@ Before running the project, create a `.env` file in the root directory and add t
 
 ```env
 # MySQL Database Configuration
-MYSQL_PASSWORD=your_password
+MYSQL_PASSWORD=your_password (will be assigned soon)
 MYSQL_HOST=18.223.196.217
-MYSQL_USER=your_username
+MYSQL_USER=your_username (will be assigned soon)
 MYSQL_DATABASE=core_db
 MYSQL_PORT=3306
 
