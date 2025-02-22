@@ -135,7 +135,7 @@ if st.button("Save Chat Session"):
     save_payload = {
         "user_id": user_id,
         "agent": st.session_state.selected_agent,
-        "messages": st.session_state.messages_simple
+        "messages": st.session_state.messages_law
     }
     
     response = requests.post(f"{API_URL}/chat_history/save_chat_session", json=save_payload)
@@ -144,3 +144,23 @@ if st.button("Save Chat Session"):
         st.success(f"✅ Chat session saved for agent: {st.session_state.selected_agent}")
     else:
         st.error("❌ Failed to save chat session.")
+
+# New Download Last Message as Word Doc button
+if st.button("Download Last Chat Message as Word Doc"):
+    if st.session_state.messages_law:
+        # Get the last message in the session state
+        last_message = st.session_state.messages_law[-1]["content"]
+        payload = {"message": last_message}
+        response = requests.post(f"{API_URL}/chat_history/download_last_message_doc", json=payload)
+        
+        if response.status_code == 200:
+            st.download_button(
+                label="Click to Download Last Chat Message",
+                data=response.content,
+                file_name="last_message.docx",
+                mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            )
+        else:
+            st.error("❌ Failed to download the chat document.")
+    else:
+        st.warning("No messages available to download.")

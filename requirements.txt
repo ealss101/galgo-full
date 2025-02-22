@@ -8,6 +8,7 @@ charset-normalizer==3.4.1
 click==8.1.8
 colorama==0.4.6
 cryptography==44.0.0
+docx==0.2.4
 fastapi
 google-cloud-storage==2.10.0
 gitdb==4.0.12
@@ -42,6 +43,7 @@ Pygments==2.19.1
 pyparsing==3.2.1
 pyrebase4
 python-dateutil==2.9.0.post0
+python-docx==0.8.11
 python-dotenv==1.0.1
 python-jwt>=2.0.1
 pytz==2024.2

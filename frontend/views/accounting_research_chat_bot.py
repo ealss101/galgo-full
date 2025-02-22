@@ -135,7 +135,7 @@ if st.button("Save Chat Session"):
     save_payload = {
         "user_id": user_id,
         "agent": st.session_state.selected_agent,
-        "messages": st.session_state.messages_simple
+        "messages": st.session_state.messages_research
     }
     
     response = requests.post(f"{API_URL}/chat_history/save_chat_session", json=save_payload)

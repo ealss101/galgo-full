@@ -1,5 +1,8 @@
 import mysql.connector
 from backend.init_database import get_connection
+from io import BytesIO
+from docx import Document
+
 
 def get_chat_sessions(email: str, agent: str):
     """Fetch chat session history for a specific agent and user."""
@@ -75,3 +78,15 @@ def save_chat_session(user_id, messages, agent):
         return False
     finally:
         conn.close()
+
+def generate_doc_from_message(message: str) -> BytesIO:
+    """
+    Generate a Word document from a single chat message.
+    """
+    document = Document()
+    document.add_paragraph(message)
+    
+    file_stream = BytesIO()
+    document.save(file_stream)
+    file_stream.seek(0)
+    return file_stream
